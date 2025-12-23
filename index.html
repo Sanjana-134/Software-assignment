@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Attendance System</title>
+    <style>
+        body {
+            background-color: #ffd6e7; /* soft pink background */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff0f6;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #ff66a3;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ffb3c6;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ffb3c6;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #ff66a3;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff3399;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ffb3c6;
+            text-align: center;
+        }
+        th {
+            background-color: #ff99bf;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Attendance System</h1>
+        <input type="text" id="studentName" placeholder="Enter student name">
+        <select id="status">
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select>
+        <button onclick="addStudent()">Add Attendance</button>
+
+        <table id="attendanceTable">
+            <tr>
+                <th>Name</th>
+                <th>Status</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function addStudent() {
+            const name = document.getElementById("studentName").value.trim();
+            const status = document.getElementById("status").value;
+            
+            if(name === "") {
+                alert("Please enter the student's name!");
+                return;
+            }
+
+            const table = document.getElementById("attendanceTable");
+            const row = table.insertRow(-1);
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            cell1.textContent = name;
+            cell2.textContent = status;
+
+            document.getElementById("studentName").value = "";
+            document.getElementById("status").value = "Present";
+        }
+    </script>
+</body>
+</html>
