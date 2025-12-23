@@ -26,15 +26,3 @@ This project was developed as part of the **Software Project Planning and Manage
 
 ---
 
-## 🛠️ Tech Stack
-
-- 🐍 Python (Flask)
-- 🌐 HTML5
-- 🎨 CSS3
-- 🧠 Jira (Project Management)
-- 📘 Confluence (Documentation)
-- 💻 GitHub (Version Control)
-
----
-
-## 📁 Project Structure
